@@ -5,7 +5,7 @@
   "description": "A virtual tabletop client for roleplaying games and worldbuilding.",
   "private": true,
   "engines": {
-    "node": ">=14.0.0",
+    "node": ">=16.16.0",
     "yarn": ">=1.22.0",
     "npm": "nope-using-yarn-lol"
   },
@@ -14,7 +14,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "docker-build": "docker compose up --build",
+    "docker-remove": "docker compose rm",
+    "docker-containers": "docker compose ps"
   },
   "dependencies": {
     "next": "12.2.0",
@@ -33,5 +36,8 @@
     "husky": "^8.0.1",
     "prettier": "^2.7.1",
     "typescript": "4.7.4"
+  },
+  "resolutions": {
+    "webpack": "^5"
   }
 }

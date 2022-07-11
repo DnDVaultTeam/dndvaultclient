@@ -2,7 +2,7 @@ name: Node Continuous Integration
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, production, development]
 
 jobs:
   test_pull_request:
@@ -14,4 +14,5 @@ jobs:
           node-version: 16.16.0
       - run: yarn install
       - run: yarn test
+      - run: yarn test:e2e
       - run: yarn build

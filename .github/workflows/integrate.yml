@@ -1,5 +1,4 @@
 name: Node Continuous Integration
-description: 'Runs e2e and unit tests, and builds a project'
 
 on:
   pull_request:

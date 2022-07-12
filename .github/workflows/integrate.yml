@@ -5,18 +5,7 @@ on:
     branches: [main, production, development]
 
 jobs:
-  unit_tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 16.16.0
-      - name: Install dependancies
-      - run: yarn install
-      - name: Run tests
-      - run: yarn test
-  e2e_tests:
+  pull_request_tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,17 +15,9 @@ jobs:
       - name: Install dependancies
         run: yarn install
         run: yarn playwright install
-      - name: Run tests
+      - name: Run unit tests
+        run: yarn test
+      - name: Run e2e tests
         run: yarn test:e2e
-  build_test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      with:
-        node-version: 16.16.0
-      - name: Install dependancies
-        run: yarn install
       - name: Run build
         run: yarn build
-      

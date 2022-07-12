@@ -14,7 +14,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch",
+    "test": "jest",
     "test:e2e": "playwright test",
     "prettier": "prettier --write .",
     "docker-build": "docker compose up --build",

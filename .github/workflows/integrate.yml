@@ -1,10 +1,10 @@
 name: Node Continuous Integration
-description: Runs e2e and unit tests, and builds a project
+description: 'Runs e2e and unit tests, and builds a project'
 
 on:
   pull_request:
     branches: [main, production, development]
-    
+
 jobs:
   pull_request_tests:
     runs-on: ubuntu-latest
@@ -14,8 +14,7 @@ jobs:
         with:
           node-version: 16.16.0
       - name: Installing dependancies
-        run: yarn install
-        run: yarn playwright install
+        run: yarn install && playwright install
       - name: Running unit tests
         run: yarn test
       - name: Run e2e tests

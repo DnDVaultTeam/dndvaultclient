@@ -13,11 +13,10 @@ jobs:
         with:
           node-version: 16.16.0
       - name: Installing dependancies
-        run: yarn install
-        run: yarn playwright install
+        run: yarn install && yarn playwright install
       - name: Running unit tests
         run: yarn test
-      - name: Run e2e tests
+      - name: Running e2e tests
         run: yarn test:e2e
       - name: Runnning build
         run: yarn build
